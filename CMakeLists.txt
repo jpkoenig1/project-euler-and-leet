@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(leetcode_framework LANGUAGES CXX)
+project(leet_euler_framework LANGUAGES CXX)
 
 # Set C++ standard and enforce it
 set(CMAKE_CXX_STANDARD 20)
@@ -12,6 +12,7 @@ file(GLOB_RECURSE PROBLEM_SOURCES
     "leetcode/*.cpp"
     "project_euler/*.cpp"
 )
+list(REMOVE_DUPLICATES PROBLEM_SOURCES)
 
 # Add the main executable (assumes your main.cpp is in the root)
 add_executable(${PROJECT_NAME}

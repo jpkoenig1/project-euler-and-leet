@@ -13,5 +13,6 @@ cmake -G "Visual Studio 17 2022" .. -DCMAKE_BUILD_TYPE=Release
 # Build the project with 4 parallel jobs
 cmake --build . --config Release --parallel 4
 
-# Run a problem (uncomment and edit as needed)
-# .\leetcode_framework.exe two_sum
+Set-Location "Release"
+
+# .\leet_euler_framework.exe two_sum
