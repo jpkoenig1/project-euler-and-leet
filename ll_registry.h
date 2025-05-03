@@ -4,6 +4,7 @@
 #include <unordered_map>
 #include <string>
 #include <iostream>
+#include "ll_framework.h"
 
 class ProblemRegistry {
     using ProblemFunc = std::function<int()>;
@@ -18,8 +19,9 @@ public:
     static void run_problem(const std::string& name) {
         auto it = get_map().find(name);
         if(it != get_map().end()) {
-            int result = it->second();
-            std::cout << name << " result: " << result << std::endl;
+            ProblemFramework::benchmark(it->second, name);
+            // int result = it->second();
+            // std::cout << name << " result: " << result << std::endl;
         } else {
             std::cerr << "Problem not found: " << name << std::endl;
         }
