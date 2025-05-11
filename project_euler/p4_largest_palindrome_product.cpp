@@ -30,12 +30,14 @@ static long largestPalindrome() {
     for (int i = 100; i < 1000; ++i) {
         for (int j = i; j < 1000; ++j) {
             int mult = i * j;
-            if (isPalindrome(mult) && largest < mult) {
+            if (largest > mult) {
+                break;
+            }
+            if (isPalindrome(mult)) {
                 largest = mult;
             }
         }
     }
-
     return largest;
 }
 
