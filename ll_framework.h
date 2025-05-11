@@ -33,6 +33,8 @@ namespace ProblemFramework {
             result_str = std::to_string(std::any_cast<int>(result_any));
         } else if (result_any.type() == typeid(long long)) {
             result_str = std::to_string(std::any_cast<long long>(result_any));
+        } else if (result_any.type() == typeid(long)) {
+            result_str = std::to_string(std::any_cast<long>(result_any));
         } else {
             result_str = "(unknown type)";
         }
