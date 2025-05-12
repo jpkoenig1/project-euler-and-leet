@@ -1,8 +1,5 @@
 #include "../ll_framework.h"
 #include "../ll_registry.h"
-#include <iostream>
-#include <chrono>
-
 
 std::vector<int> twoSumImpl(std::vector<int>& nums, int target) {
     std::vector<int> solution;
@@ -25,7 +22,7 @@ std::vector<int> two_sum() {
     std::vector<int> exampleNums = {2,9,11,13};
     int exampleTarget = 7;
 
-    return twoSumImpl(exampleNums, exampleTarget)
+    return twoSumImpl(exampleNums, exampleTarget);
 }
 
 REGISTER_PROBLEM(two_sum)
