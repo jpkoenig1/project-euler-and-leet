@@ -19,8 +19,10 @@ namespace ProblemFramework {
         return result;
     }
 
-    // Benchmarking utility
-
+    // Helper function to cast outputs appropriately. Possibly need to recurse through containers.
+    std::string resolveType(std::any result_any);
+    
+    // Run the function/problem and benchmark results.
     template<typename Func>
     void benchmark(Func&& f, const std::string& problem_name) {
         // Fully qualify chrono components
@@ -28,16 +30,7 @@ namespace ProblemFramework {
         std::any result_any = f();
         auto end = std::chrono::high_resolution_clock::now();
         
-        std::string result_str;
-        if (result_any.type() == typeid(int)) {
-            result_str = std::to_string(std::any_cast<int>(result_any));
-        } else if (result_any.type() == typeid(long long)) {
-            result_str = std::to_string(std::any_cast<long long>(result_any));
-        } else if (result_any.type() == typeid(long)) {
-            result_str = std::to_string(std::any_cast<long>(result_any));
-        } else {
-            result_str = "(unknown type)";
-        }
+        std::string result_str = resolveType(result_any);
 
         // Explicitly use std::cout
         std::cout << problem_name << " result: " << result_str
