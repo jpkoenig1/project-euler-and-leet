@@ -17,6 +17,7 @@ list(REMOVE_DUPLICATES PROBLEM_SOURCES)
 # Add the main executable (assumes your main.cpp is in the root)
 add_executable(${PROJECT_NAME}
     main.cpp
+    ll_framework.cpp
     ${PROBLEM_SOURCES}
 )
 
