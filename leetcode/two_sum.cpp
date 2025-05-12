@@ -15,6 +15,7 @@ std::vector<int> twoSumImpl(std::vector<int>& nums, int target) {
                 return solution;
         }
     }
+    return solution;
 }
 
 std::vector<int> two_sum() {
