@@ -7,7 +7,6 @@
 
 namespace ProblemFramework {
     
-
     // Helper function to cast outputs appropriately. Possibly need to recurse through containers.
     std::string resolveType(std::any result_any);
 
