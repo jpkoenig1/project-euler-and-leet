@@ -11,17 +11,10 @@ namespace ProblemFramework {
     using std::string;
     using std::unordered_map;
     
-    // Input parser for LeetCode-style test cases
-    template<typename T>
-    vector<T> parse_input(const string& raw) {
-        vector<T> result;
-        // Implementation from lc-cpp template [1]
-        return result;
-    }
-
+    
     // Helper function to cast outputs appropriately. Possibly need to recurse through containers.
     std::string resolveType(std::any result_any);
-    
+
     // Run the function/problem and benchmark results.
     template<typename Func>
     void benchmark(Func&& f, const std::string& problem_name) {
