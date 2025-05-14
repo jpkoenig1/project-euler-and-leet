@@ -3,7 +3,7 @@
 #include <unordered_map>
 #include <string>
 #include <iostream>
-#include <any> // For type-erased storage
+#include <any>
 #include <sstream>
 #include "ll_framework.h"
 
@@ -15,7 +15,7 @@ class ProblemRegistry {
     }
 
 public:
-    // Register any function with any return type
+    // Register any function with any return type.
     template <typename Func>
     static void add_problem(const std::string& name, Func fn) {
         get_map()[name] = [fn]() -> std::any {
@@ -35,7 +35,7 @@ public:
     }
 };
 
-// Macro to register any function (int/long long/etc)
+// Macro to register any function (int/long long/etc).
 #define REGISTER_PROBLEM(name) \
     namespace { \
         struct AutoRegister_##name { \
